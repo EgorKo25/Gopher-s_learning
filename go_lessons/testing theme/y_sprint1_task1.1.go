@@ -1,16 +1,8 @@
-package main
+package testing_theme
 
 import (
-	"fmt"
 	"math"
 )
-
-func main() {
-
-	v := Abs(3)
-	fmt.Println(v)
-
-}
 
 // Abs возвращает абсолютное значение.
 // Например: 3.1 => 3.1, -3.14 => 3.14, -0 => 0.
