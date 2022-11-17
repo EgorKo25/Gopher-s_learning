@@ -2,7 +2,6 @@ package testing_theme
 
 import (
 	"errors"
-	"fmt"
 )
 
 // Relationship определяет положение в семье.
@@ -47,21 +46,4 @@ func (f *Family) AddNew(r Relationship, p Person) error {
 	}
 	f.Members[r] = p
 	return nil
-}
-
-func main() {
-	f := Family{}
-	err := f.AddNew(Father, Person{
-		FirstName: "Misha",
-		LastName:  "Popov",
-		Age:       56,
-	})
-	fmt.Println(f, err)
-
-	err = f.AddNew(Father, Person{
-		FirstName: "Drug",
-		LastName:  "Mishi",
-		Age:       57,
-	})
-	fmt.Println(f, err)
 }
