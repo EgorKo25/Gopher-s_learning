@@ -23,7 +23,7 @@ const rawResp = `
 `
 
 type (
-	Response struct {
+	Resp struct {
 		Header ResponseHeader `json:"header"`
 		Data   ResponseData   `json:"data,omitempty"`
 	}
@@ -47,10 +47,10 @@ type (
 	}
 )
 
-func ReadResponse(rawResp string) (Response, error) {
-	resp := Response{}
+func ReadResponse(rawResp string) (Resp, error) {
+	resp := Resp{}
 	if err := json.Unmarshal([]byte(rawResp), &resp); err != nil {
-		return Response{}, fmt.Errorf("JSON unmarshal: %w", err)
+		return Resp{}, fmt.Errorf("JSON unmarshal: %w", err)
 	}
 
 	return resp, nil

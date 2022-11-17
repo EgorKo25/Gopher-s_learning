@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 // Sum возвращает сумму элементов.
 func Sum(values ...int) int {
@@ -9,6 +12,14 @@ func Sum(values ...int) int {
 		sum += v
 	}
 	return sum
+}
+
+func main() {
+	var t *testing.T
+
+	fmt.Println(Sum(1, 2))
+	TestSum(t)
+
 }
 
 // TestSum - протестировали Sum()
@@ -42,9 +53,4 @@ func TestSum(t *testing.T) {
 			}
 		})
 	}
-}
-
-func main() {
-	var t *testing.T
-	TestSum(t)
 }
